@@ -1,0 +1,68 @@
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/main.css"/>
+    <link rel="stylesheet" href="../static/css/upload.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="icon" href="../static/image/logo.svg">
+    <title>Видео</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <img class="logo" src="../static/image/logo.svg" alt="лого">
+            <div class="project_name">UrFUBE</div>
+        </header>
+
+        <main>
+            <aside>
+                <nav>
+                    <a href="/">Все видео</a>
+                    <a href="/upload" id="tag-upload">Добавить видео</a>
+                    <a href="/login" id="tag-login">Войти</a>
+                    <a href="/registration" id="tag-registration" >Регистрация</a>
+                    <a href="/" id="tag-logout" >Выйти</a>
+                </nav>
+            </aside>
+            <div class="content-wrapper">
+
+                <form  id="upload_form" action="/upload" method="post" enctype="multipart/form-data">
+
+                    <div class="form">
+                        <label for="name"> Название </label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+
+                    <div class="form">
+                        <label for="video">Видео mp4 до 100мб</label>
+                        <input type="file" name="file" id="video" required>
+                    </div>
+
+                    <label for="jwt"></label>
+                    <input type="hidden" name="jwttoken" id="jwt" value="-" required>
+
+                    <div class="form">
+                        <label>Отправить</label>
+                        <input type="submit">
+                    </div>
+
+                </form>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="fio">
+            </div>
+        </footer>
+    </div>
+    <script src="../static/js/jwt.js"></script>
+    <script src="../static/js/navigation.js"></script>
+<script src="../static/js/upload.js"></script>
+</body>
+</html>

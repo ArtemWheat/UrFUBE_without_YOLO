@@ -1,0 +1,53 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../static/css/main.css"/>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="icon" href="../static/image/logo.svg">
+    <title>Все видео</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <img class="logo" src="../static/image/logo.svg" alt="лого">
+            <div class="project_name">UrFUBE</div>
+        </header>
+
+        <main>
+            <aside>
+                <nav>
+                    <a href="/upload" id="tag-upload">Добавить видео</a>
+                    <a href="/login" id="tag-login">Войти</a>
+                    <a href="/registration" id="tag-registration" >Регистрация</a>
+                    <a href="/" id="tag-logout" >Выйти</a>
+                </nav>
+            </aside>
+            <div class="content-wrapper">
+                <ul id="videos">
+                    {% for video in videos %}
+                        <li id="video">
+                            <video src="{{ video.video }}"></video>
+                            <p id="video-name">{{ video.name }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <div class="fio">
+            </div>
+        </footer>
+    </div>
+
+    <script src="../static/js/navigation.js"></script>
+    <script src="../static/js/index.js"></script>
+</body>
+</html>
