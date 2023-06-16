@@ -25,7 +25,7 @@ like.addEventListener('click',  async () => {
     if (liked){
         type = 'dislike'
     }
-    let request = await fetch("/video/" + videoId + '/' + type, {
+    let request = await fetch("/video/" + videoId + '/' + type + '/' + accessToken, {
         method: 'POST',
         headers: {
             'Authorization': accessToken,
@@ -48,7 +48,7 @@ like.addEventListener('click',  async () => {
 
 async function is_liked(){
     let accessToken = localStorage.getItem('accessToken')
-    let request = await fetch('/video/' + videoId +'/is_liked', {
+    let request = await fetch('/video/' + videoId +'/is_liked/' + accessToken, {
         method: 'GET',
         headers: {
             'Authorization': accessToken,
