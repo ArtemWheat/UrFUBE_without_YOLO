@@ -18,7 +18,7 @@ async function registration() {
 
     if (response.status === 201) {
         alert("Вы зарегестрированны!")
-        window.location.href = 'http://127.0.0.1:9001/';
+        window.location.href = 'https://urfube-4h1y.onrender.com/';
     }else{
         response.json().then(x => alert(JSON.stringify(x)))
     }

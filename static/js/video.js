@@ -81,7 +81,7 @@ function upload(data){
 
     id = form.getAttribute('name')
     let xhr = new XMLHttpRequest();
-    let url = new URL('http://127.0.0.1:9001/delete');
+    let url = new URL('https://urfube-4h1y.onrender.com/delete');
     url.searchParams.set('id', id);
     url.searchParams.set('jwttoken', token);
     xhr.open("POST", url)
@@ -94,7 +94,7 @@ function upload(data){
     xhr.onload = function() {
         if (xhr.status == 200 | xhr.status == 204) {
             alert('Видео удалено')
-            window.location.href = 'http://127.0.0.1:9001/';
+            window.location.href = 'https://urfube-4h1y.onrender.com/';
 
         }else if (xhr.status == 401) {
             alert('Это не ваше видео')
