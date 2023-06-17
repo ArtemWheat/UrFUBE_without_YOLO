@@ -15,7 +15,7 @@ form.addEventListener('submit', handleFormSubmit)
 
 function upload(data){
     let xhr = new XMLHttpRequest();
-    let url = new URL('https://urfube-4h1y.onrender.com/upload');
+    let url = new URL('http://88.218.62.143/upload');
     url.searchParams.set('name', name);
     url.searchParams.set('file', video);
     url.searchParams.set('jwttoken', token);
@@ -29,7 +29,7 @@ function upload(data){
     xhr.onload = function() {
         if (xhr.status == 200 | xhr.status == 202) {
             alert('Видео загружено')
-            window.location.href = 'https://urfube-4h1y.onrender.com/';
+            window.location.href = 'http://88.218.62.143/';
 
         }else if (xhr.status == 415) {
             alert('Видео не соответствует формату')
