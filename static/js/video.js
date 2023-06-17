@@ -3,6 +3,7 @@ let videoId = window.location.toString().split('/').reverse()[0];
 let checked = document.getElementById('checked')
 const form = document.getElementById('video_form')
 let token = localStorage.getItem('accessToken')
+const mainUrl = "http://88.218.62.143/"
 
 function handleFormSubmit(event) {
     console.log('dsfsd')
@@ -81,7 +82,7 @@ function upload(data){
 
     id = form.getAttribute('name')
     let xhr = new XMLHttpRequest();
-    let url = new URL('http://88.218.62.143/delete');
+    let url = new URL(mainUrl + '/delete');
     url.searchParams.set('id', id);
     url.searchParams.set('jwttoken', token);
     xhr.open("POST", url)
@@ -94,7 +95,7 @@ function upload(data){
     xhr.onload = function() {
         if (xhr.status == 200 | xhr.status == 204) {
             alert('Видео удалено')
-            window.location.href = 'http://88.218.62.143/';
+            window.location.href = mainUrl;
 
         }else if (xhr.status == 401) {
             alert('Это не ваше видео')

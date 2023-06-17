@@ -2,7 +2,7 @@ const form = document.getElementById('upload_form')
 const name = document.getElementById('name')
 const video = document.getElementById('video')
 let token = localStorage.getItem('accessToken')
-
+const mainUrl = "http://88.218.62.143/"
 
 function handleFormSubmit(event) {
     console.log('dsfsd')
@@ -15,7 +15,7 @@ form.addEventListener('submit', handleFormSubmit)
 
 function upload(data){
     let xhr = new XMLHttpRequest();
-    let url = new URL('http://88.218.62.143/upload');
+    let url = new URL(mainUrl + '/upload');
     url.searchParams.set('name', name);
     url.searchParams.set('file', video);
     url.searchParams.set('jwttoken', token);
@@ -24,12 +24,15 @@ function upload(data){
         alert('Авторизуйтесь для загрузки видео')
         return
     }
+
     xhr.send(data)
+    document.getElementById("loading").style.display = "block";
 
     xhr.onload = function() {
+        document.getElementById("loading").style.display = "none";
         if (xhr.status == 200 | xhr.status == 202) {
             alert('Видео загружено')
-            window.location.href = 'http://88.218.62.143/';
+            window.location.href = mainUrl;
 
         }else if (xhr.status == 415) {
             alert('Видео не соответствует формату')

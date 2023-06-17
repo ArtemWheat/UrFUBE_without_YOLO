@@ -6,6 +6,12 @@ div.form {
     display: table-row;
 }
 
+.load-text {
+    color: white;
+    text-align: center;
+    display: none;
+}
+
 label,
 input {
     display: table-cell;

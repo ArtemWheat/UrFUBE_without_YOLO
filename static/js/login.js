@@ -1,3 +1,5 @@
+const mainUrl = "http://88.218.62.143/"
+
 async function login(){
     let email = document.getElementById("email").value
     let password = document.getElementById("password").value
@@ -22,7 +24,7 @@ async function login(){
 
     if (response.status === 200){
         alert("Успех!")
-        window.location.href = 'http://88.218.62.143/';
+        window.location.href = mainUrl;
     }
     else {
         response.json().then(x => alert(JSON.stringify(x)))
