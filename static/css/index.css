@@ -21,7 +21,7 @@ video{
     width: 70%;
     margin: auto;
     object-fit: cover;
-    height: 200px;
+    height: 70%;
 }
 
 #video-name{
@@ -29,6 +29,7 @@ video{
     width: 70%;
     margin: auto;
     text-align: center;
+    font-size: smaller;
 }
 
 .
