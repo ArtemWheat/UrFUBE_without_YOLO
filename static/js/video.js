@@ -82,7 +82,7 @@ function upload(data){
 
     id = form.getAttribute('name')
     let xhr = new XMLHttpRequest();
-    let url = new URL(mainUrl + '/delete');
+    let url = new URL(mainUrl + 'delete');
     url.searchParams.set('id', id);
     url.searchParams.set('jwttoken', token);
     xhr.open("POST", url)

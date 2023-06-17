@@ -15,7 +15,7 @@ form.addEventListener('submit', handleFormSubmit)
 
 function upload(data){
     let xhr = new XMLHttpRequest();
-    let url = new URL(mainUrl + '/upload');
+    let url = new URL(mainUrl + 'upload');
     url.searchParams.set('name', name);
     url.searchParams.set('file', video);
     url.searchParams.set('jwttoken', token);
